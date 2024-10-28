@@ -1,0 +1,16 @@
+name: "Yay internet!"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "Resume"
+      href: resume.html
+    - text: "NYC Climate Plots"
+      href: plots.html 
+    - icon: fa-envelope fa-lg
+      href: mailto:<yifan.shi0520@gmail.com>
+    - icon: fa-github fa-lg
+      href: http://github.com/11fan5/
+output:
+  html_document:
+    theme: cerulean

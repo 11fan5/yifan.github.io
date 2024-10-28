@@ -1,0 +1,112 @@
+---
+title: "NYC Climate Plots"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+```
+
+
+```{r}
+data("ny_noaa")
+
+ny_noaa = 
+  ny_noaa %>% 
+  separate(date, into = c("year", "month", "day"), convert = TRUE) %>% 
+  filter(id == "USW00094728") %>% 
+  mutate(
+    name = case_match(
+      id, 
+      "USW00094728" ~ "CentralPark_NY"),
+    tmax = as.numeric(tmax) / 10,
+    tmin = as.numeric(tmin) / 10,
+    prcp = prcp / 10)
+```
+
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+### Relationship Between Max and Min Temperatures
+
+```{r}
+ny_noaa %>%
+  mutate(text_label = str_c("Maximum Temperature: ", tmax, "°C\nMinimum Temperature: ", tmin, "°C")) %>%
+  plot_ly(
+    x = ~tmin, 
+    y = ~tmax, 
+    type = 'scatter', 
+    mode = 'markers', 
+    color = ~month,  
+    text = ~text_label, 
+    colors = "viridis"  
+  ) %>%
+  layout(
+    title = "Relationship Between Max and Min Temperatures",
+    xaxis = list(title = "Minimum Temperature (°C)"),
+    yaxis = list(title = "Maximum Temperature (°C)"),
+    colorway = viridis::viridis(100)  
+  )
+```
+
+Column {data-width=400}
+-----------------------------------------------------------------------
+
+### Yearly Precipitation at Central Park"
+
+```{r}
+ny_noaa %>%
+  group_by(year) %>%
+  summarise(
+    yearly_prcp = sum(prcp, na.rm = TRUE)
+  ) %>%
+  mutate(
+    text_label = 
+      str_c("Total Precipitation: ", yearly_prcp, "\nYear: ", year)) %>% 
+  plot_ly(
+    x = ~year, 
+    y = ~yearly_prcp, 
+    type = 'bar',
+    color = ~yearly_prcp, 
+    text = ~text_label) %>% 
+  layout(
+    title = "Yearly Precipitation at Central Park",
+    xaxis = list(title = "Year"),
+    yaxis = list(title = "Total Precipitation (mm)"),
+    hovermode = 'compare'
+  )
+```
+
+### Monthly Climate Data for Central Park, 2008
+
+```{r}
+ny_noaa %>% 
+  filter(year == 2008) %>% 
+  group_by(month) %>% 
+  summarise(
+    monthly_prcp = sum(prcp, na.rm = TRUE),
+    mean_tmax = mean(tmax, na.rm = TRUE),
+    mean_tmin = mean(tmin, na.rm = TRUE))%>% 
+  plot_ly(x = ~month) %>% 
+  add_bars(y = ~monthly_prcp, 
+           name = "Monthly Total Precipitation", 
+           marker = list(color = 'rgba(50,171,96,0.7)'), 
+           yaxis = 'y2') %>% 
+  add_lines(y = ~mean_tmax, 
+            name = "Mean Max Temp", 
+            line = list(color = "red")) %>% 
+  add_lines(y = ~mean_tmin, 
+            name = "Mean Min Temp", 
+            line = list(color = "blue")) %>% 
+   layout(
+    title = "Monthly Climate Data for 2008",
+    yaxis = list(title = "Temperature (°C)"),
+    yaxis2 = list(title = "Precipitation (mm)", overlaying = "y", side = "right", showgrid = FALSE),
+    barmode = 'underlay')
+```

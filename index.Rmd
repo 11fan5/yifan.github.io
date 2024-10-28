@@ -1,0 +1,18 @@
+---
+title: "Welcome to Yifan's Website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+### About me
+I am Yifan Shi, currently a second-year MPH Epidemiology student at Columbia University, Mailman School of Public Health. My certificate is Health of an Aging Society, and I am deeply interested in aging, health equity, and health policy. Her research is driven by a commitment to understanding and addressing health disparities, particularly as they affect aging populations. 
+
+Currently, I am working with [Dr. Daniel Belsky](https://www.belskylab.com/) on my thesis, to study the impact of social isolation and loneliness on pace of aging. 
+
+![](https://images.squarespace-cdn.com/content/v1/611479dc15fb7275bd53d852/5d9b4915-8aa5-420f-8e2e-ab2612366b4e/Yifan.jpg?format=1500w)
+
+
+### About this website
+This is a website about me and some plots I made
+

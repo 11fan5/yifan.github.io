@@ -1,0 +1,100 @@
+---
+title: "About Yifan"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+### Education
+**Columbia University Mailman School of Public Health**, New York
+
+Aug 2023 – May 2025
+
+Master of Public Health (MPH) in Epidemiology  
+
+Certificate: Health of an Aging Society
+
+Honors: Columbia Robert Butler Aging Center Longevity Fellowship
+
+
+**National University of Singapore**, Singapore 
+
+Aug 2019 – May 2023 
+
+Bachelor of Science (Hons) in Food Science and Technology
+
+Minor in Public Health and Geoscience
+
+Honors: NUS Undergraduate Science and Technology Merit Scholarship (2019 – 2023)
+
+### Skills
+**Data Analysis/Statistics Skills**: R, SAS, STATA, Python
+
+**Computer**: Microsoft Office, Adobe Lightroom
+
+**Research**: Longitudinal Data Analysis, Survival Analysis, Systematic Review and Meta-Analysis, Causal Inference, Quantitative and Qualitative Research 
+
+**Languages**: English, Mandarin
+
+**Interests**: Windsurfing, Freediving, Tennis, Percussion, Gu Zheng
+
+### Research Experience 
+**Social Isolation and Loneliness and Pace of Aging**
+
+Advisor: Dr. Daniel Belsky
+
+
+**Developing a Dataset to Quantify the Pace of Biological Aging: the English Longitudinal Study of Ageing**
+
+Advisors: Dr. Daniel Belsky, Dr. Yuan Zhang
+
+
+**Driving Cessation and Depression among Older Adults**
+
+Advisors: Dr. Guohua Li, Dr. Thelma Mielenz
+
+
+**Digital Intervention for Cardiovascular Disease Prevention**
+
+Advisors: Dr. Tai E Shyong, Dr. Liu Mei Hui
+
+
+**Systematic Review on Nutrition Interventions**
+
+Advisors: Dr. Rob M. van Dam, Dr. Karina R. Lora
+
+
+**Acceptability of Alternative Protein Products in a Multi-Ethnic Asian Cohort**
+
+Advisors: Dr. Mary Chong, Dr. Chia Airu
+
+
+### Healthcare Experience
+**Health Promotion Board**, Singapore | Intern
+
+**Nestlé Wyeth Nutrition**, Singapore | Intern
+
+### Extracurricular Activities
+University Life Ambassador, Columbia University
+
+Campus Tour Guide, Columbia University
+
+Bloom Mentorship, New York | Volunteer
+
+Friends of the Highline, New York | Volunteer
+
+Columbia University Herbert Irving Comprehensive Cancer Center, New York | Volunteer
+
+NUS Photographic Society, Singapore | Darkroom Director
+
+Chinese Orchestra, Victoria Junior College, Singapore | Percussionist
+
+Spark Volunteer Teaching Abroad, Singapore | Project Director
+
+Community Befriending Programme, Tanjong Katong Girls’ School, Singapore | Volunteer
+
+
+
+
+You can go [home](index.html)

@@ -33,7 +33,7 @@ ny_noaa =
 
 Column {data-width=600}
 -----------------------------------------------------------------------
-### Relationship Between Max and Min Temperatures
+### Relationship Between Max and Min Temperatures at Central Park
 
 ```{r}
 ny_noaa %>%
@@ -58,7 +58,7 @@ ny_noaa %>%
 Column {data-width=400}
 -----------------------------------------------------------------------
 
-### Yearly Precipitation at Central Park"
+### Yearly Precipitation at Central Park
 
 ```{r}
 ny_noaa %>%
@@ -83,30 +83,25 @@ ny_noaa %>%
   )
 ```
 
-### Monthly Climate Data for Central Park, 2008
-
+### Monthly Snowfall Distribution at Central Park, 1981-2010
 ```{r}
-ny_noaa %>% 
-  filter(year == 2008) %>% 
-  group_by(month) %>% 
-  summarise(
-    monthly_prcp = sum(prcp, na.rm = TRUE),
-    mean_tmax = mean(tmax, na.rm = TRUE),
-    mean_tmin = mean(tmin, na.rm = TRUE))%>% 
-  plot_ly(x = ~month) %>% 
-  add_bars(y = ~monthly_prcp, 
-           name = "Monthly Total Precipitation", 
-           marker = list(color = 'rgba(50,171,96,0.7)'), 
-           yaxis = 'y2') %>% 
-  add_lines(y = ~mean_tmax, 
-            name = "Mean Max Temp", 
-            line = list(color = "red")) %>% 
-  add_lines(y = ~mean_tmin, 
-            name = "Mean Min Temp", 
-            line = list(color = "blue")) %>% 
-   layout(
-    title = "Monthly Climate Data for 2008",
-    yaxis = list(title = "Temperature (°C)"),
-    yaxis2 = list(title = "Precipitation (mm)", overlaying = "y", side = "right", showgrid = FALSE),
-    barmode = 'underlay')
+ny_noaa %>%
+  mutate(month = factor(month, labels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                                          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))) %>%
+  group_by(year, month) %>%
+  summarise(monthly_snow = sum(snow, na.rm = TRUE), .groups = 'drop') %>%
+  plot_ly(
+    x = ~month, 
+    y = ~monthly_snow, 
+    type = 'box',
+    color = ~month,
+    colors = "viridis"
+  ) %>%
+  layout(
+    title = "Monthly Snowfall Distribution at Central Park, 1981-2010",
+    xaxis = list(title = "Month"),
+    yaxis = list(title = "Total Snowfall (mm)", zeroline = FALSE, rangemode = "tozero"),
+    hovermode = 'compare'
+  )
+
 ```

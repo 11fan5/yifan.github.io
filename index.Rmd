@@ -10,9 +10,8 @@ I am Yifan Shi, currently a second-year MPH Epidemiology student at Columbia Uni
 
 Currently, I am working with [Dr. Daniel Belsky](https://www.belskylab.com/) on my thesis, to study the impact of social isolation and loneliness on pace of aging. 
 
-![](https://images.squarespace-cdn.com/content/v1/611479dc15fb7275bd53d852/5d9b4915-8aa5-420f-8e2e-ab2612366b4e/Yifan.jpg?format=1500w)
+![](https://images.squarespace-cdn.com/content/v1/611479dc15fb7275bd53d852/5d9b4915-8aa5-420f-8e2e-ab2612366b4e/Yifan.jpg?format=1500w){ width=500px }
 
 
 ### About this website
-This is a website about me and some plots I made
-
+This is a website about [me](resume.html) and some [plots on NYC Climate](plots.html) I made.
